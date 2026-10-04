@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, Soumia ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#050005;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    color:white;
+}
+
+/* =========================
+   المشاهد
+========================= */
+
+.scene{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:none;
+    overflow:hidden;
+}
+
+.scene.active{
+    display:flex;
+}
+
+/* =========================
+   النجوم
+========================= */
+
+.stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+}
+
+/* =========================
+   المشهد 2
+========================= */
+
+#scene2{
+    justify-content:center;
+    align-items:center;
+    background:#030303;
+}
+
+.code-window{
+    width:min(90%,600px);
+    height:min(70%,430px);
+
+    border-radius:15px;
+
+    background:#090909;
+
+    border:1px solid #333;
+
+    box-shadow:
+        0 0 35px rgba(255,0,80,.25);
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.window-top{
+    height:42px;
+
+    background:#151515;
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    padding:0 15px;
+
+    direction:ltr;
+}
+
+.dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+}
+
+.dot:nth-child(1){
+    background:#ff5f57;
+}
+
+.dot:nth-child(2){
+    background:#ffbd2e;
+}
+
+.dot:nth-child(3){
+    background:#28c840;
+}
+
+.code{
+    padding:25px;
+
+    color:#777;
+
+    direction:ltr;
+
+    font-family:monospace;
+
+    line-height:1.8;
+
+    font-size:13px;
+}
+
+.code .pink{
+    color:#ff4f91;
+}
+
+.code .red{
+    color:#ff174f;
+}
+
+.heart-code{
+    position:absolute;
+
+    inset:50px 0 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.big-line-heart{
+    font-size:100px;
+
+    color:#ff174f;
+
+    text-shadow:
+        0 0 10px #ff174f,
+        0 0 30px #ff174f,
+        0 0 60px #ff174f;
+
+    animation:heartAppear 4s forwards;
+
+    transform:scale(0);
+}
+
+@keyframes heartAppear{
+
+    0%{
+        transform:scale(0) rotate(-20deg);
+        opacity:0;
+    }
+
+    50%{
+        transform:scale(1.2) rotate(5deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1) rotate(0);
+        opacity:1;
+    }
+
+}
+
+.soumia-small{
+    position:absolute;
+
+    bottom:45px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:28px;
+
+    color:white;
+
+    text-shadow:0 0 20px #ff174f;
+}
+
+/* =========================
+   Matrix
+========================= */
+
+#scene3,
+#scene4,
+#scene5{
+
+    background:#000;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.matrix{
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    opacity:.75;
+}
+
+.matrix-column{
+
+    position:absolute;
+
+    top:-100%;
+
+    color:#ff174f;
+
+    font-family:monospace;
+
+    font-size:18px;
+
+    line-height:1.4;
+
+    writing-mode:vertical-rl;
+
+    animation:matrixFall linear infinite;
+
+    text-shadow:0 0 8px #ff174f;
+}
+
+@keyframes matrixFall{
+
+    to{
+        transform:translateY(220vh);
+    }
+
+}
+
+.number{
+
+    position:relative;
+
+    z-index:5;
+
+    font-size:min(45vw,280px);
+
+    font-weight:bold;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 35px #ff174f,
+        0 0 70px #ff174f;
+
+    animation:numberZoom 2s forwards;
+}
+
+@keyframes numberZoom{
+
+    0%{
+        opacity:0;
+        transform:scale(.3);
+    }
+
+    25%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   المفرقعات
+========================= */
+
+.fireworks{
+
+    position:absolute;
+
+    bottom:-20px;
+
+    left:0;
+
+    width:100%;
+
+    height:35%;
+
+    pointer-events:none;
+}
+
+.firework{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:4px;
+
+    height:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 -80px 0 white,
+        35px -65px 0 white,
+        -35px -65px 0 white,
+        60px -35px 0 white,
+        -60px -35px 0 white,
+        0 -120px 0 white;
+
+    animation:explode 2s infinite;
+}
+
+.firework:nth-child(1){
+    left:15%;
+}
+
+.firework:nth-child(2){
+    left:50%;
+    animation-delay:.7s;
+}
+
+.firework:nth-child(3){
+    left:85%;
+    animation-delay:1.2s;
+}
+
+@keyframes explode{
+
+    0%{
+        transform:translateY(80px) scale(.2);
+        opacity:0;
+    }
+
+    40%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-50px) scale(1.4);
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   المشهد 6
+========================= */
+
+#scene6{
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle,
+            #43001e,
+            #10000a 55%,
+            #000
+        );
+}
+
+.center-heart{
+
+    position:relative;
+
+    z-index:4;
+
+    font-size:min(35vw,220px);
+
+    color:#ff174f;
+
+    text-shadow:
+        0 0 15px #ff174f,
+        0 0 40px #ff174f,
+        0 0 90px #ff174f;
+
+    animation:heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+}
+
+.heart-name{
+
+    position:absolute;
+
+    z-index:5;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    text-shadow:0 0 15px white;
+}
+
+/* =========================
+   كلمات الجوانب
+========================= */
+
+.edge-love{
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    width:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-around;
+
+    font-size:10px;
+
+    color:#ff6d91;
+
+    opacity:.65;
+
+    overflow:hidden;
+}
+
+.edge-left{
+    left:3px;
+}
+
+.edge-right{
+    right:3px;
+}
+
+.edge-love span{
+
+    writing-mode:vertical-rl;
+
+    text-shadow:0 0 8px #ff174f;
+}
+
+/* =========================
+   المشهد 7
+========================= */
+
+#scene7{
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050005;
+}
+
+.love-heart{
+
+    position:relative;
+
+    width:360px;
+
+    height:330px;
+}
+
+.love-word{
+
+    position:absolute;
+
+    color:#ff174f;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    text-shadow:0 0 8px #ff174f;
+
+    animation:loveAppear 3s infinite alternate;
+}
+
+@keyframes loveAppear{
+
+    from{
+        opacity:.25;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.05);
+    }
+
+}
+
+.love-title{
+
+    position:absolute;
+
+    z-index:10;
+
+    font-size:30px;
+
+    color:white;
+
+    text-shadow:0 0 20px #ff174f;
+}
+
+/* =========================
+   المشاهد النصية
+========================= */
+
+.text-scene{
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle,
+            #40001d,
+            #11000a 55%,
+            #000
+        );
+}
+
+.text-scene h1{
+
+    font-size:clamp(32px,9vw,70px);
+
+    margin-bottom:25px;
+
+    color:white;
+
+    text-shadow:
+        0 0 15px #ff174f,
+        0 0 40px #ff174f;
+}
+
+.text-scene p{
+
+    max-width:85%;
+
+    font-size:clamp(18px,5vw,30px);
+
+    line-height:1.8;
+
+    color:#ffdce6;
+}
+
+.glow{
+
+    animation:textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow{
+
+    from{
+        text-shadow:0 0 10px #ff174f;
+    }
+
+    to{
+        text-shadow:
+            0 0 40px #ff174f,
+            0 0 80px #ff174f;
+    }
+
+}
+
+/* =========================
+   المشهد الأخير
+========================= */
+
+#scene12{
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #65002d 0%,
+            #220012 35%,
+            #050005 75%
+        );
+}
+
+.moon{
+
+    position:absolute;
+
+    top:8%;
+
+    right:10%;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#fff4f7;
+
+    box-shadow:0 0 30px white;
+}
+
+.final-heart{
+
+    font-size:110px;
+
+    color:#ff174f;
+
+    text-shadow:
+        0 0 20px #ff174f,
+        0 0 40px #ff174f;
+
+    animation:heartBeat 1.3s infinite;
+}
+
+.final-title{
+
+    margin-top:10px;
+
+    font-size:clamp(30px,8vw,65px);
+
+    text-shadow:0 0 25px #ff174f;
+}
+
+.date{
+
+    margin-top:18px;
+
+    font-size:24px;
+
+    color:#ffd6e1;
+}
+
+.final-line{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#ffb4c8;
+}
+
+.floating-heart{
+
+    position:absolute;
+
+    color:#ff174f;
+
+    font-size:20px;
+
+    animation:floatUp 7s linear infinite;
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:
+            translateY(110vh)
+            rotate(0);
+
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+            translateY(-20vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
+
+}
+
+/* =========================
+   الهاتف
+========================= */
+
+@media(max-width:600px){
+
+    .code-window{
+        width:92%;
+        height:65%;
+    }
+
+    .code{
+        padding:18px;
+        font-size:11px;
+    }
+
+    .big-line-heart{
+        font-size:80px;
+    }
+
+    .soumia-small{
+        font-size:22px;
+        bottom:30px;
+    }
+
+    .love-heart{
+        transform:scale(.75);
+    }
+
+    .love-title{
+        font-size:25px;
+    }
+
+    .final-heart{
+        font-size:85px;
+    }
+
+    .date{
+        font-size:20px;
+    }
+
+    .final-line{
+        font-size:16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     المشهد 2
+========================= -->
+
+<section class="scene active" id="scene2">
+
+    <div class="code-window">
+
+        <div class="window-top">
+
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+
+        </div>
+
+        <div class="code">
+
+            <span class="pink">const</span>
+            birthday = {
+
+            <br>
+
+            &nbsp;&nbsp;name:
+            <span class="red">"Soumia"</span>,
+
+            <br>
+
+            &nbsp;&nbsp;wish:
+            <span class="red">"Happiness ❤️"</span>,
+
+            <br>
+
+            &nbsp;&nbsp;date:
+            <span class="red">"15/10/2025"</span>
+
+            <br>
+
+            };
+
+            <br><br>
+
+            <span class="pink">if</span>(birthday){
+
+            <br>
+
+            &nbsp;&nbsp;heart.create();
+
+            <br>
+
+            }
+
+        </div>
+
+        <div class="heart-code">
+
+            <div class="big-line-heart">
+                ♡
+            </div>
+
+        </div>
+
+        <div class="soumia-small">
+            Soumia ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     المشهد 3
+========================= -->
+
+<section class="scene" id="scene3">
+
+    <div class="matrix" id="matrix3"></div>
+
+    <div class="number">
+        3
+    </div>
+
+</section>
+
+
+<!-- =========================
+     المشهد 4
+========================= -->
+
+<section class="scene" id="scene4">
+
+    <div class="matrix" id="matrix4"></div>
+
+    <div class="number">
+        2
+    </div>
+
+</section>
+
+
+<!-- =========================
+     المشهد 5
+========================= -->
+
+<section class="scene" id="scene5">
+
+    <div class="matrix" id="matrix5"></div>
+
+    <div class="number">
+        1
+    </div>
+
+</section>
+
+
+<!-- =========================
+     المشهد 6
+========================= -->
+
+<section class="scene" id="scene6">
+
+    <div class="stars" id="stars6"></div>
+
+    <div class="edge-love edge-left">
+
+        <span>I LOVE YOU</span>
+        <span>I LOVE YOU</span>
+        <span>LOVE ❤️</span>
+        <span>I LOVE YOU</span>
+        <span>❤️</span>
+
+    </div>
+
+    <div class="edge-love edge-right">
+
+        <span>I LOVE YOU</span>
+        <span>❤️</span>
+        <span>I LOVE YOU</span>
+        <span>LOVE</span>
+        <span>I LOVE YOU</span>
+
+    </div>
+
+    <div class="center-heart">
+        ❤️
+    </div>
+
+    <div class="heart-name">
+        Soumia ❤️
+    </div>
+
+    <div class="fireworks">
+
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     المشهد 7
+========================= -->
+
+<section class="scene" id="scene7">
+
+    <div class="stars" id="stars7"></div>
+
+    <div
+        class="love-heart"
+        id="loveHeart">
+    </div>
+
+    <div class="love-title">
+        I LOVE YOU ❤️
+    </div>
+
+</section>
+
+
+<!-- =========================
+     المشهد 8
+========================= -->
+
+<section class="scene text-scene" id="scene8">
+
+    <div class="stars" id="stars8"></div>
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h1 class="glow">
+        Happy Birthday, Soumia ❤️
+    </h1>
+
+    <p>
+        أتمنى أن تظل ابتسامتكِ دائمًا
+        أكثر إشراقًا من النجوم ✨❤️
+    </p>
+
+</section>
+
+
+<!-- =========================
+     المشهد 9
+========================= -->
+
+<section class="scene text-scene" id="scene9">
+
+    <div class="stars" id="stars9"></div>
+
+    <h1 class="glow">
+        I LOVE YOU ❤️
+    </h1>
+
+    <p>
+        سمية... ❤️
+        <br>
+        أنتِ شخص مميز جدًا ✨
+    </p>
+
+</section>
+
+
+<!-- =========================
+     المشهد 10
+========================= -->
+
+<section class="scene text-scene" id="scene10">
+
+    <div class="stars" id="stars10"></div>
+
+    <h1>
+        إلى سمية ❤️
+    </h1>
+
+    <p>
+        آسف لأنني لم أقدم هدية مادية بسبب البعد 😍
+    </p>
+
+</section>
+
+
+<!-- =========================
+     المشهد 11
+========================= -->
+
+<section class="scene text-scene" id="scene11">
+
+    <div class="stars" id="stars11"></div>
+
+    <h1 class="glow">
+        أنتِ مميزة ❤️
+    </h1>
+
+    <p>
+        وأتمنى لكِ دائمًا أجمل الأيام ✨🌹
+    </p>
+
+</section>
+
+
+<!-- =========================
+     المشهد 12 الأخير
+========================= -->
+
+<section class="scene" id="scene12">
+
+    <div class="moon"></div>
+
+    <div class="stars" id="stars12"></div>
+
+    <div id="floatingHearts"></div>
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h1 class="final-title">
+        Happy Birthday, Soumia ❤️
+    </h1>
+
+    <div class="date">
+        15 October 2025 🎂
+    </div>
+
+    <div class="final-line">
+        أجمل الأمنيات لكِ دائمًا ✨❤️
+    </div>
+
+    <div class="fireworks">
+
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   النجوم
+========================= */
+
+function createStars(id,amount=80){
+
+    const container=document.getElementById(id);
+
+    if(!container)return;
+
+    for(let i=0;i<amount;i++){
+
+        const star=document.createElement("div");
+
+        star.className="star";
+
+        star.style.left=
+            Math.random()*100+"%";
+
+        star.style.top=
+            Math.random()*100+"%";
+
+        star.style.animationDelay=
+            Math.random()*3+"s";
+
+        star.style.animationDuration=
+            (1+Math.random()*3)+"s";
+
+        container.appendChild(star);
+
+    }
+
+}
+
+
+/* =========================
+   Matrix
+========================= */
+
+function createMatrix(id){
+
+    const matrix=document.getElementById(id);
+
+    if(!matrix)return;
+
+    const characters=[
+        "I LOVE YOU",
+        "LOVE",
+        "❤️",
+        "♥",
+        "S",
+        "O",
+        "U",
+        "M",
+        "I",
+        "A",
+        "3",
+        "2",
+        "1",
+        "♡",
+        "★"
+    ];
+
+    for(let i=0;i<45;i++){
+
+        const column=
+            document.createElement("div");
+
+        column.className=
+            "matrix-column";
+
+        let text="";
+
+        for(let j=0;j<18;j++){
+
+            text+=
+                characters[
+                    Math.floor(
+                        Math.random()*
+                        characters.length
+                    )
+                ]+" ";
+
+        }
+
+        column.textContent=text;
+
+        column.style.left=
+            Math.random()*100+"%";
+
+        column.style.animationDuration=
+            (2+Math.random()*4)+"s";
+
+        column.style.animationDelay=
+            (-Math.random()*5)+"s";
+
+        matrix.appendChild(column);
+
+    }
+
+}
+
+
+/* =========================
+   قلب I LOVE YOU
+========================= */
+
+function createLoveHeart(){
+
+    const container=
+        document.getElementById("loveHeart");
+
+    if(!container)return;
+
+    const total=120;
+
+    for(let i=0;i<total;i++){
+
+        const t=
+            Math.PI*2*i/total;
+
+        const x=
+            16*Math.pow(
+                Math.sin(t),3
+            );
+
+        const y=
+            13*Math.cos(t)
+            -5*Math.cos(2*t)
+            -2*Math.cos(3*t)
+            -Math.cos(4*t);
+
+        const word=
+            document.createElement("span");
+
+        word.className="love-word";
+
+        word.textContent="I LOVE YOU";
+
+        word.style.left=
+            (180+x*10)+"px";
+
+        word.style.top=
+            (145-y*10)+"px";
+
+        word.style.animationDelay=
+            (i*.02)+"s";
+
+        container.appendChild(word);
+
+    }
+
+}
+
+
+/* =========================
+   القلوب الطائرة
+========================= */
+
+function createFloatingHearts(){
+
+    const container=
+        document.getElementById(
+            "floatingHearts"
+        );
+
+    if(!container)return;
+
+    for(let i=0;i<20;i++){
+
+        const heart=
+            document.createElement("div");
+
+        heart.className=
+            "floating-heart";
+
+        heart.textContent=
+            Math.random()>.5
+            ? "❤️"
+            : "💗";
+
+        heart.style.left=
+            Math.random()*100+"%";
+
+        heart.style.animationDelay=
+            Math.random()*7+"s";
+
+        heart.style.animationDuration=
+            (5+Math.random()*5)+"s";
+
+        heart.style.fontSize=
+            (14+Math.random()*20)+"px";
+
+        container.appendChild(heart);
+
+    }
+
+}
+
+
+/* =========================
+   إظهار المشهد
+========================= */
+
+function showScene(number){
+
+    document
+        .querySelectorAll(".scene")
+        .forEach(scene=>{
+            scene.classList.remove("active");
+        });
+
+    const scene=
+        document.getElementById(
+            "scene"+number
+        );
+
+    if(scene){
+
+        scene.classList.add("active");
+
+    }
+
+}
+
+
+/* =========================
+   التشغيل التلقائي
+========================= */
+
+function startBirthday(){
+
+    /*
+       المشهد 2 يبدأ مباشرة
+    */
+
+    showScene(2);
+
+
+    /*
+       المشهد 2
+       7 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(3);
+    },7000);
+
+
+    /*
+       المشهد 3
+       2 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(4);
+    },9000);
+
+
+    /*
+       المشهد 4
+       2 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(5);
+    },11000);
+
+
+    /*
+       المشهد 5
+       2 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(6);
+    },13000);
+
+
+    /*
+       المشهد 6
+       7 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(7);
+    },20000);
+
+
+    /*
+       المشهد 7
+       5 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(8);
+    },25000);
+
+
+    /*
+       المشهد 8
+       5 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(9);
+    },30000);
+
+
+    /*
+       المشهد 9
+       5 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(10);
+    },35000);
+
+
+    /*
+       المشهد 10
+       5 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(11);
+    },40000);
+
+
+    /*
+       المشهد 11
+       5 ثوان
+    */
+
+    setTimeout(()=>{
+        showScene(12);
+    },45000);
+
+}
+
+
+/* =========================
+   تشغيل الموقع
+========================= */
+
+window.addEventListener("load",()=>{
+
+    createStars("stars6",80);
+    createStars("stars7",80);
+    createStars("stars8",80);
+    createStars("stars9",80);
+    createStars("stars10",80);
+    createStars("stars11",80);
+    createStars("stars12",100);
+
+    createMatrix("matrix3");
+    createMatrix("matrix4");
+    
